@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# To-do List
 
-## Getting Started
+- 用 Next.js 與 Firebase 做可以一個有後端可以存取的待辦清單網頁。
+- 用 ChatGPT 輔助。
 
-First, run the development server:
+## 安裝 nvm
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 用 nextjs 建立 Todo List 專案
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npx create-next-app@latest todo-firebase-next
+cd todo-firebase-next
+npm install firebase
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+後面的步驟他一開始請我找 page/ 資料夾，但那是似乎是 Next.js 13 之前的版本的做法， 13 或更新的版本是用 app router ，所以是在 app/ 下做事。 Firebase 的東西要自己建立 lib/ 來做。
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+設定首頁，初步連結 Firebase ，設定用 Google 登入。
