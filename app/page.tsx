@@ -3,15 +3,18 @@
 import { signInWithPopup, User } from 'firebase/auth'
 import { auth, provider } from '@/lib/firebase'
 import { useState } from 'react'
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
   const [user, setUser] = useState<User | null>(null)
+  const router = useRouter()
 
   const handleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, provider)
       console.log("✅ 登入成功:", result.user)
       setUser(result.user)
+      router.push('/todo')
     } catch (err) {
       console.error("❌ 登入失敗:", err)
     }
